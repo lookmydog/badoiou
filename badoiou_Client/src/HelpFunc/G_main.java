@@ -1,4 +1,4 @@
-package HelpFunc;
+ï»¿package HelpFunc;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -10,7 +10,7 @@ public class G_main {
 	
 	public G_main()
 	{
-		//¸ü¤J³]©wÀÉ
+		//è¼‰å…¥è¨­å®šæª”
 		PropertyConfigurator.configure("log4j.properites");
 	}
 }

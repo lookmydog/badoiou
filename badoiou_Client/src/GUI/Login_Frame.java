@@ -1,4 +1,4 @@
-package GUI;
+ï»¿package GUI;
 
 import HelpFunc.*;
 
@@ -23,36 +23,36 @@ public class Login_Frame extends JFrame {
 	private static final long serialVersionUID = 847651487361554900L;
 
 	// variable
-	// ¨t²Î¿Ã¹õ¤j¤p
+	// ç³»çµ±è¢å¹•å¤§å°
 	private Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 	private int frame_width;
 	private int frame_height;
 	private int frame_posX;
 	private int frame_posY;
-	// UIª«¥ó
+	// UIç‰©ä»¶
 	private String frame_title;
 	private JFormattedTextField txt_IpInput;
 	private JFormattedTextField txt_PortInput;
 	private JTextField txt_Name;
 	private JButton btn_Enter;
-	// ³s½u°Ñ¼Æ
+	// é€£ç·šåƒæ•¸
 	private String ip = "";
 	private String userName = "";
 	private int port = 0;
-	// ¨ä¥L
+	// å…¶ä»–
 	private final String FONT_TYPE = "SimHei";
 
-	// «Øºc¤l
+	// å»ºæ§‹å­
 	public Login_Frame() {
 
-		// °t¸m¤j¤p
+		// é…ç½®å¤§å°
 		frame_width = (int) (screenSize.width / 3);
 		frame_height = (int) (screenSize.height / 3);
 		frame_posX = (int) (screenSize.width / 2 - frame_width / 2);
 		frame_posY = (int) (screenSize.height / 2 - frame_height / 2);
 
-		// °t¸m¤¸¥ó¡B¼ĞÃD
-		frame_title = "¨Ï¥ÎªÌµn¤Jµe­±";
+		// é…ç½®å…ƒä»¶ã€æ¨™é¡Œ
+		frame_title = "ä½¿ç”¨è€…ç™»å…¥ç•«é¢";
 		txt_Name = new JTextField();
 		txt_IpInput = new JFormattedTextField();
 		txt_PortInput = new JFormattedTextField();
@@ -62,25 +62,25 @@ public class Login_Frame extends JFrame {
 
 	}
 
-	// ªì©l¤Æ¬É­±
+	// åˆå§‹åŒ–ç•Œé¢
 	private void init_UI() {
-		// ³]¸m¼e¡B°ª
+		// è¨­ç½®å¯¬ã€é«˜
 		this.setSize(frame_width, frame_height);
-		// «ö¤FX °µ¬Æ»ò¨Æ¥ó
+		// æŒ‰äº†X åšç”šéº¼äº‹ä»¶
 		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-		// ³]¸m¥X²{¦ì¸m
+		// è¨­ç½®å‡ºç¾ä½ç½®
 		this.setLocation(frame_posX, frame_posY);
-		// °t¸mlayout¤è¦¡
+		// é…ç½®layoutæ–¹å¼
 		// this.getContentPane().setLayout(new GridLayout(4,3));
-		// ³]¸m¼ĞÃD
+		// è¨­ç½®æ¨™é¡Œ
 		this.setTitle(frame_title);
-		// ³]¸m¤º®e
+		// è¨­ç½®å…§å®¹
 		init_content(this.getContentPane());
-		// ¥iÅã²{
+		// å¯é¡¯ç¾
 		this.setVisible(true);
 	}
 
-	// ³]¸m¤º®e
+	// è¨­ç½®å…§å®¹
 	private void init_content(Container cp) {
 
 		Font font = new Font(FONT_TYPE, Font.PLAIN, 30);
@@ -88,40 +88,40 @@ public class Login_Frame extends JFrame {
 		int iLayPad = 25;
 
 		// label -> name
-		JLabel lbl_Name = new JLabel("½Ğ¿é¤J±zªº¦WºÙ:", JLabel.TRAILING);
+		JLabel lbl_Name = new JLabel("è«‹è¼¸å…¥æ‚¨çš„åç¨±:", JLabel.TRAILING);
 		lbl_Name.setFont(font);
 
 		// text -> name
 		txt_Name.setColumns(20);
 		txt_Name.setFont(font);
 
-		// Panel ¥[¤Jobj
+		// Panel åŠ å…¥obj
 		p1.add(lbl_Name);
 		lbl_Name.setLabelFor(txt_Name);
 		p1.add(txt_Name);
 
 		// label -> ip
-		JLabel lbl_Ip = new JLabel("½Ğ¿é¤JServer IP:", JLabel.TRAILING);
+		JLabel lbl_Ip = new JLabel("è«‹è¼¸å…¥Server IP:", JLabel.TRAILING);
 		lbl_Ip.setFont(font);
 
 		// formatted text -> ip
 		txt_IpInput.setColumns(20);
 		txt_IpInput.setFont(font);
 
-		// Panel ¥[¤Jobj
+		// Panel åŠ å…¥obj
 		p1.add(lbl_Ip);
 		lbl_Ip.setLabelFor(txt_IpInput);
 		p1.add(txt_IpInput);
 
 		// label -> port
-		JLabel lbl_Port = new JLabel("½Ğ¿é¤J«ü©w Port:", JLabel.TRAILING);
+		JLabel lbl_Port = new JLabel("è«‹è¼¸å…¥æŒ‡å®š Port:", JLabel.TRAILING);
 		lbl_Port.setFont(font);
 
 		// formatted text -> port
 		txt_PortInput.setColumns(20);
 		txt_PortInput.setFont(font);
 
-		// Panel ¥[¤Jobj
+		// Panel åŠ å…¥obj
 		p1.add(lbl_Port);
 		lbl_Port.setLabelFor(txt_PortInput);
 		p1.add(txt_PortInput);
@@ -131,22 +131,22 @@ public class Login_Frame extends JFrame {
 		lbl_Empty.setFont(font);
 
 		// btn -> enter
-		btn_Enter.setText("½T©w");
+		btn_Enter.setText("ç¢ºå®š");
 		btn_Enter.setFont(font);
 		set_Button_Action(btn_Enter);
 
-		// Panel ¥[¤Jobj
+		// Panel åŠ å…¥obj
 		p1.add(lbl_Empty);
 		lbl_Empty.setLabelFor(btn_Enter);
 		p1.add(btn_Enter);
 
-		// ¸ü¤JJAVA ´£¨Ñªº spring layout ±Æª©
+		// è¼‰å…¥JAVA æä¾›çš„ spring layout æ’ç‰ˆ
 		SpringUtilities.makeCompactGrid(p1, 4, 2, iLayPad, iLayPad, iLayPad, iLayPad);
 
 		cp.add(p1);
 	}
 
-	// »s§@buttonªº°Ê§@¤º®e
+	// è£½ä½œbuttonçš„å‹•ä½œå…§å®¹
 	private void set_Button_Action(JButton btn) {
 		btn.addActionListener(new ActionListener() {
 
@@ -158,10 +158,10 @@ public class Login_Frame extends JFrame {
 					userName = txt_Name.getText();
 					port = Integer.parseInt(txt_PortInput.getText());
 
-					//System.out.println("¦blogin JFrame¸Ì name:" + userName + "\tIP:" + ip + "\tport:" + port);
+					//System.out.println("åœ¨login JFrameè£¡ name:" + userName + "\tIP:" + ip + "\tport:" + port);
 
 					//Component c = (Component) e.getSource();
-					// §ä¨ìJframe
+					// æ‰¾åˆ°Jframe
 					//c = c.getParent().getParent().getParent().getParent().getParent();
 
 					// if (c instanceof JFrame) {
@@ -171,18 +171,18 @@ public class Login_Frame extends JFrame {
 					// }
 
 				} catch (NumberFormatException NE) {
-					JOptionPane.showMessageDialog((Component) e.getSource(), "Port ½Ğ¿é¤J¼Æ¦r");
+					JOptionPane.showMessageDialog((Component) e.getSource(), "Port è«‹è¼¸å…¥æ•¸å­—");
 				}
 			}
 		});
 	}
 
-	// ¦^¶Ç¼Æ­È
+	// å›å‚³æ•¸å€¼
 	public Object[] getObj() {
 		Object[] obj = { this.userName, this.ip, this.port };
 		return obj;
 	}
-	//ªì©l¤Æ°Ñ¼Æ
+	//åˆå§‹åŒ–åƒæ•¸
 	public void initObj(){
 		  this.ip = "";
 		  this.userName = "";

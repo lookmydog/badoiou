@@ -1,4 +1,4 @@
-package Main;
+ï»¿package Main;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -13,7 +13,7 @@ public class Handle_Client_Process extends Thread {
 	private int serialNo = 0;
 	private Socket client = null;
 
-	// «Øºc¤l
+	// å»ºæ§‹å­
 	public Handle_Client_Process(Socket socket, int No) {
 
 		this.client = socket;
@@ -39,7 +39,7 @@ public class Handle_Client_Process extends Thread {
 		try {
 			while (true) {
 				
-				//Â_½u³B²z
+				//æ–·ç·šè™•ç†
 				this.client.sendUrgentData(0xFF);
 				
 				G_main.logger.info("heart beat,serialNo:" + this.serialNo);

@@ -1,4 +1,4 @@
-package Main;
+ï»¿package Main;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,14 +23,14 @@ public class badoiou_Client {
 	private static Socket client = null;
 
 	public static void main(String[] args) {
-		// «Ø¥ßlog¸ê®Æ§¨
+		// å»ºç«‹logè³‡æ–™å¤¾
 		File directory = new File(".\\log");
 		if (!directory.exists()) {
 			if (directory.mkdirs()) {
 				System.out.println("make log directory OK ");
 			}
 		}
-		// «ØºcG_main
+		// å»ºæ§‹G_main
 		new G_main();
 
 		Login_Frame login = new Login_Frame();
@@ -45,25 +45,25 @@ public class badoiou_Client {
 				name = (String) obj[0];
 				ip = (String) obj[1];
 				port = (int) obj[2];
-				// ¹Á¸Õ³s½u
+				// å˜—è©¦é€£ç·š
 				if (checkLinkServer(ip, port)) {
-					// ³s½u¦¨¥\
-					// ³]¥ß°Ñ¼Æ
-					// Ãö³¬µøµ¡
+					// é€£ç·šæˆåŠŸ
+					// è¨­ç«‹åƒæ•¸
+					// é—œé–‰è¦–çª—
 					login.dispose();
 					G_main.logger.info("Login JFrame is dispose");
 				} else {
-					// ³s½u¥¢±Ñ
+					// é€£ç·šå¤±æ•—
 					obj = null;
-					// ªì©l¤Æ°Ñ¼Æ
+					// åˆå§‹åŒ–åƒæ•¸
 					login.initObj();
 					G_main.logger.info("Initialize Obj variables");
 
-					JOptionPane.showMessageDialog(login, "µLªk³s¤Wserver,½Ğ­«·s¿é¤J");
+					JOptionPane.showMessageDialog(login, "ç„¡æ³•é€£ä¸Šserver,è«‹é‡æ–°è¼¸å…¥");
 				}
 
 			}
-			// 0.2¬í ¶]¤@¦¸°j°é
+			// 0.2ç§’ è·‘ä¸€æ¬¡è¿´åœˆ
 			try {
 				Thread.currentThread().sleep(200);
 			} catch (InterruptedException e) {
@@ -71,18 +71,18 @@ public class badoiou_Client {
 				G_main.logger.error(e.getMessage());
 			}
 		}
-		// ¦C¥X°Ñ¼Æ
+		// åˆ—å‡ºåƒæ•¸
 		G_main.logger
 				.info("End Login JFrame. name:" + name + " ip:" + ip+ " port:" + port);
 
-		// ¦pªGÁÙ¬O¨S¦³³s½u¡A¦ı¬OÃö³¬µn¤Jµøµ¡
+		// å¦‚æœé‚„æ˜¯æ²’æœ‰é€£ç·šï¼Œä½†æ˜¯é—œé–‰ç™»å…¥è¦–çª—
 		if (client == null) {
 			G_main.logger.info("Exit Client App");
 			System.exit(0);
 		} else {
-			// ¶i¤J¨Ï¥ÎªÌ¤¶­±
+			// é€²å…¥ä½¿ç”¨è€…ä»‹é¢
 
-			// ´ú¸Õheart beat
+			// æ¸¬è©¦heart beat
 
 			try {
 				client.setSoTimeout(30*1000);
@@ -97,7 +97,7 @@ public class badoiou_Client {
 			int count =1;
 			while (true) {
 
-				// Â_½u³B²z»İ­n­«°µ
+				// æ–·ç·šè™•ç†éœ€è¦é‡åš
 				try {
 					client.sendUrgentData(0xFF);
 				} catch (IOException e1) {
