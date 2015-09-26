@@ -1,4 +1,4 @@
-package Main;
+ï»¿package Main;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -22,14 +22,14 @@ public class badoiou_Server {
 	private static int port = 1480;
 
 	public static void main(String[] args) {
-		// «Ø¥ßlog ¸ê®Æ§¨
+		// å»ºç«‹log è³‡æ–™å¤¾
 		File directory = new File(".\\log");
 		if (!directory.exists()) {
 			if (directory.mkdirs()) {
 				System.out.println("Directory log is made.");
 			}
 		}
-		// «Øºcg_main
+		// å»ºæ§‹g_main
 		new G_main();
 
 		G_main.logger.info("The Server is running.");
@@ -60,7 +60,7 @@ public class badoiou_Server {
 			}
 		} catch (Exception e) {
 			G_main.logger.error(e.getMessage());
-			// Ãö³¬server
+			// é—œé–‰server
 			try {
 				if (server != null) {
 					server.close();
