@@ -1,5 +1,6 @@
 ﻿package Main;
 
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
@@ -9,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import GUI.*;
 import HelpFunc.G_main;
+import Logic.TestDataSocket;
 
 import org.apache.log4j.*;
 
@@ -31,7 +33,11 @@ public class badoiou_Client {
 			}
 		}
 		// 建構G_main
+		if (args.length != 0) {
+			new G_main(args[0]);
+		} else {
 		new G_main();
+		}
 
 		Login_Frame login = new Login_Frame();
 
@@ -72,8 +78,7 @@ public class badoiou_Client {
 			}
 		}
 		// 列出參數
-		G_main.logger
-				.info("End Login JFrame. name:" + name + " ip:" + ip+ " port:" + port);
+		G_main.logger.info("End Login JFrame. name:" + name + " ip:" + ip + " port:" + port);
 
 		// 如果還是沒有連線，但是關閉登入視窗
 		if (client == null) {
@@ -81,48 +86,24 @@ public class badoiou_Client {
 			System.exit(0);
 		} else {
 			// 進入使用者介面
-
-			// 測試heart beat
-
-			try {
-				client.setSoTimeout(30*1000);
-				client.setKeepAlive(true);
-				client.setOOBInline(true);
-			} catch (SocketException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
-			//test
-			int count =1;
-			while (true) {
-
-				// 斷線處理需要重做
-				try {
-					client.sendUrgentData(0xFF);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					G_main.logger.error(e1.getMessage());
-					
+			String str = "-1";
 					try {
-						client.close();
+				DataInputStream dis = new DataInputStream(client.getInputStream());
+				str = dis.readUTF();
+				System.out.println(str);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					break;
-				}
 				
-				G_main.logger.info("test server heart "+count++);
-				try {
-					Thread.currentThread().sleep(1000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					G_main.logger.error(e.getMessage());
-				}
+			// 測試heart beat
+			new HeartBeat_Client(client, 0).start();
+			// new SendToServer(client).start();
+
+			// test
+			new TestDataSocket(ip, Integer.valueOf(str)).start();
 			}
-		}
-		G_main.logger.info("Exit Client App");
+		G_main.logger.info("Exit Client Main Thread");
 	}
 
 	private static boolean checkLinkServer(String ip, int port) {
