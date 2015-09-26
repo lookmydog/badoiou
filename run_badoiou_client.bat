@@ -1,7 +1,7 @@
-echo on
-@REM ³]©w§Aªº±M®×¸ô®| Path
+ï»¿echo on
+@REM è¨­å®šä½ çš„å°ˆæ¡ˆè·¯å¾‘ Path
 SETLOCAL
-set PROJECTPATH=C:\Users\¥i«Â\workspace\badoiou_Client
+set PROJECTPATH=C:\Users\å¯å¨\workspace\badoiou_Client
 set LOG4J_LIB_PATH=%PROJECTPATH%\lib\log4j-1.2.9.jar
 set JSON_LIB_PATH=%PROJECTPATH%\lib\json.jar
 set BADOIOU_MAIN=Main.badoiou_Client

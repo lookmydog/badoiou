@@ -6,12 +6,12 @@ import java.net.SocketException;
 
 import HelpFunc.G_main;
 
-public class HeartBeat_Client extends Thread {
+public class HeartBeat_Server extends Thread {
 	private int heartBeatCount = 1;
 	private Socket heartBeatSocket = null;
 	private int serialNo = 0;
 
-	public HeartBeat_Client(Socket client, int No) {
+	public HeartBeat_Server(Socket client, int No) {
 		this.heartBeatSocket = client;
 		this.serialNo = No;
 

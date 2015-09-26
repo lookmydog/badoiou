@@ -1,4 +1,4 @@
-package Logic;
+ï»¿package Logic;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -27,7 +27,7 @@ public class TestDataSocket extends Thread {
 		int newPort = this.port + (this.SerialNo * 2) + 1;
 
 		try {
-			// µ¥«İ
+			// ç­‰å¾…
 			try {
 				G_main.logger.info("Wait 5 Sec");
 				Thread.currentThread().sleep(5000);
@@ -56,7 +56,7 @@ public class TestDataSocket extends Thread {
 					// System.out.println(strTmp);
 
 					if (func != null) {
-						System.out.println("¥\¯à" + func + ",¦WºÙ" + storeName);
+						System.out.println("åŠŸèƒ½" + func + ",åç¨±" + storeName);
 					}
 				} catch (Exception e) {
 					G_main.logger.error(e.getMessage());
